@@ -1,0 +1,112 @@
+/* About module CSS */
+
+.about {
+  padding: var(--section-gap) 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 260px 1fr;
+  gap: 60px;
+  align-items: start;
+  width: 100%;
+}
+
+.photo {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: top;
+  filter: grayscale(15%);
+  border: 1px solid var(--border);
+  transition: filter 0.3s;
+}
+.photo:hover {
+  filter: grayscale(0%);
+}
+
+/* Biography text */
+.text p {
+  color: var(--text-secondary);
+  line-height: 1.85;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+.text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Inline bold txt in bio paragraphs */
+.text :global(strong) {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* Detail rows */
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  transition: padding-left 0.2s;
+}
+.row:last-child {
+  border-bottom: none;
+}
+.row:hover {
+  padding-left: 6px;
+}
+
+.rowKey {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  padding-top: 2px;
+}
+
+.rowValue {
+  color: var(--text-primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "text photo"
+      "details details";
+  }
+  .text {
+    grid-area: text;
+  }
+  .photo {
+    grid-area: photo;
+    max-width: 100%;
+  }
+  .details {
+    grid-area: details;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "photo"
+      "text"
+      "details";
+  }
+  .photo {
+    max-width: 240px;
+  }
+}

@@ -1,0 +1,89 @@
+/* Skills.module.css */
+
+.skills {
+  padding: var(--section-gap) 0;
+}
+
+/* Three-column grid for skill categories */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-top: 48px;
+}
+
+/* Skill card */
+.card {
+  background: var(--bg);
+  padding: 36px 32px;
+  transition: background 0.2s;
+}
+.card:hover {
+  background: var(--bg-card);
+}
+
+.cardTitle {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+/* Skill list */
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+.item:hover {
+  color: var(--text-primary);
+}
+.skillName {
+  flex-shrink: 0;
+}
+
+/* Progress bar */
+.bar {
+  flex: 0 0 60px;
+  height: 2px;
+  background: var(--border);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 1px;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

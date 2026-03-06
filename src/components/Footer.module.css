@@ -1,0 +1,31 @@
+/* Footer.module.css */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 0;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.copy {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+}
+
+.copy span {
+  color: var(--accent);
+}
+
+@media (max-width: 560px) {
+  .inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+}

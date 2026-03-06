@@ -1,0 +1,141 @@
+/* Experience.module.css */
+
+.experience {
+  padding: var(--section-gap) 0;
+}
+
+/* Experience list */
+.expList {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.expItem {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 40px;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--border);
+  transition: padding-left 0.25s ease;
+}
+
+.expItem:first-child {
+  padding-top: 0;
+}
+.expItem:last-child {
+  border-bottom: none;
+}
+.expItem:hover {
+  padding-left: 8px;
+}
+
+/* Left: period + type */
+.period {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+
+.type {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.75;
+}
+
+/* Right: role, company, description, tags */
+.role {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+
+.company {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.expDesc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.expTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Certifications */
+.certsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.certCard {
+  background: var(--bg);
+  padding: 32px;
+  transition: background 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.certCard:hover {
+  background: var(--bg-card);
+}
+
+.certIssuer {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.certName {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.certDate {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.certLink {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  text-decoration: none;
+  margin-top: 8px;
+  transition: color 0.2s;
+}
+.certLink:hover {
+  color: var(--accent);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .expItem {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}

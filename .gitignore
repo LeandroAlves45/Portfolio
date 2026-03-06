@@ -1,0 +1,29 @@
+#Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+#Build uotput
+dist/
+dist-ssr/
+
+#Environment variables 
+.env
+.env.local
+.env.*.local
+
+#Editor & OS
+.vscode/*
+!.vscode/settings.json
+.DS_Store
+Thumbs.db
+.ideia
+
+#Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+#Typescript cache
+*.tsbuildinfo
