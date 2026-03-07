@@ -18,19 +18,14 @@ export default function App() {
       <main>
         <Hero />
 
-        <hr className="divider" />
         <About />
 
-        <hr className="divider" />
         <Skills />
 
-        <hr className="divider" />
         <Projects />
 
-        <hr className="divider" />
         <Experience />
 
-        <hr className="divider" />
         <Contact />
       </main>
 

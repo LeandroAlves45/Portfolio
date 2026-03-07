@@ -36,6 +36,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 60px;
 }
 
 body {
@@ -67,13 +68,13 @@ a {
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 3px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg);
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
+  background: var(--accent);
   border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -199,6 +200,6 @@ a {
     padding: 0 20px;
   }
   :root {
-    --section-gap: 80px;
+    --section-gap: 120px;
   }
 }
