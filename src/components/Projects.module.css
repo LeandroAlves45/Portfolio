@@ -23,7 +23,8 @@
 .track {
   flex: 1;
   position: relative;
-  min-height: 360px;
+  min-height: 400px;
+  width: 100%;
 }
 
 .slide {
@@ -31,10 +32,10 @@
   inset: 0;
   opacity: 0;
   pointer-events: none;
+  transform: translate(40px);
   transition:
     opacity 0.4s ease,
     transform 0.4s ease;
-  transform: translate(40px);
 }
 
 .slideActive {
@@ -68,13 +69,27 @@
   background: rgba(163, 230, 53, 0.05);
 }
 
-/* Grid separates cards with 1px lines */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1px;
+.arrowRow {
+  display: none;
+}
+
+/* Dots */
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
   background: var(--border);
-  border: 1px solid var(--border);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.dotActive {
+  background: var(--accent);
+  transform: scale(1.4);
 }
 
 /* Project card */
@@ -115,7 +130,7 @@
   height: 100%;
 }
 
-/* Card elements */
+/* Index */
 .index {
   font-family: var(--font-mono);
   font-size: 10px;
@@ -137,7 +152,7 @@
   border: 1px solid rgba(163, 230, 53, 0.3);
   background: rgba(163, 230, 53, 0.05);
   border-radius: 2px;
-  padding: 3px 6px;
+  padding: 3px 9px;
   align-self: flex-start;
 }
 
@@ -149,6 +164,7 @@
   border-radius: 50%;
   background: var(--accent);
   animation: pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
 }
 
 @keyframes pulse {
@@ -165,7 +181,7 @@
 
 .title {
   font-family: var(--font-display);
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.2;
@@ -195,32 +211,14 @@
   text-transform: uppercase;
   color: var(--accent);
   margin-top: 8px;
-  transition: gap 0.2s;
-}
-
-.dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--border);
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  transition:
-    background 0.2s,
-    transform 0.2s;
-}
-
-.dotActive {
-  background: var(--accent);
-  transform: scale(1.4);
 }
 
 /* Modal Overlay */
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
   z-index: 200;
   display: flex;
   align-items: center;
@@ -304,7 +302,7 @@
   font-family: var(--font-display);
   font-size: 30px;
   font-weight: 700;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.02em;
   line-height: 1.1;
   margin-bottom: 20px;
 }
@@ -333,19 +331,80 @@
   flex-wrap: wrap;
 }
 
-/* Responsive */
+/* Responsive tablet*/
+@media (max-width: 900px) {
+  .track {
+    min-height: 460px;
+  }
+}
+
+/* Responsive Mobile */
 @media (max-width: 640px) {
   .header {
     flex-direction: column;
     align-items: flex-start;
+    margin-bottom: 32px;
   }
-  .arrow {
-    width: 40px;
-    height: 40px;
-    font-size: 15px;
+
+  .carouselWrapper {
+    flex-direction: column;
+    gap: 0;
   }
+  .track {
+    min-height: unset;
+    width: 100%;
+  }
+
+  .slide {
+    position: relative;
+    opacity: 0;
+    inset: unset;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transform: none;
+  }
+  .slideActive {
+    opacity: 1;
+    height: auto;
+    pointer-events: auto;
+    overflow: visible;
+  }
+
+  .arrowLeft,
+  .arrowRight {
+    display: none;
+  }
+
+  .arrowRow {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .arrowRow .arrow {
+    display: flex;
+    width: 44px;
+    height: 44px;
+  }
+
+  .cardInner {
+    padding: 28px 24px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
   .modal {
-    padding: 32px 24px;
+    padding: 32px 20px;
   }
   .modalTitle {
     font-size: 24px;

@@ -260,9 +260,28 @@ export default function Projects() {
             ))}
           </div>
 
-          {/* Right Arrow */}
           <button
             className={`${styles.arrow} ${styles.arrowRight}`}
+            onClick={next}
+            aria-label="Next project"
+          >
+            →
+          </button>
+        </div>
+
+        {/* Arrow in line - only visible on mobile */}
+        <div className={styles.arrowRow}>
+          <button
+            className={styles.arrow}
+            onClick={prev}
+            aria-label="Previous project"
+          >
+            ←
+          </button>
+
+          {/* Right Arrow */}
+          <button
+            className={styles.arrow}
             onClick={next}
             aria-label="Next project"
           >
