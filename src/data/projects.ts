@@ -35,6 +35,19 @@ export const projects: Project[] = [
   },
   {
     id: 2,
+    title: "Victorious Jiu-Jitsu Academy Website",
+    description:
+      "Institutional website for a Jiu-Jitsu academy, featuring class schedules, instructor profiles and a contact form. Built with a focus on <strong>responsive design</strong> and clean UI.",
+    longDescription:
+      "Designed and developed a responsive institutional website for Victorious Jiu-Jitsu Academy, showcasing class schedules, instructor profiles, and a contact form. The project emphasized clean UI/UX principles to create an engaging online presence for the academy. Technologies used include <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>, with a focus on ensuring accessibility and mobile responsiveness.",
+    tags: ["HTML", "CSS", "JavaScript", "Responsive Design", "UI/UX"],
+    status: "Completed",
+    githubUrl:
+      "https://github.com/LeandroAlves45/Site_Victorious_Jiu_jitsu.git",
+    liveUrl: "https://portfolio-three-gules-a83qb4ujlo.vercel.app/",
+  },
+  {
+    id: 3,
     title: "Car Rental Management System",
     description:
       "A comprehensive fleet and booking management platform featuring a <strong>Flask</strong> web application and a synchronized <strong>Tkinter</strong> desktop version. The system handles real-world transaction simulations with centralized data persistence using <strong>SQLite</strong>.",
@@ -49,6 +62,7 @@ export const projects: Project[] = [
       "Desktop Application",
     ],
     status: "Completed",
-    githubUrl: "https://github.com/LeandroAlves45/Projeto_final_curso_python.git",
+    githubUrl:
+      "https://github.com/LeandroAlves45/Projeto_final_curso_python.git",
   },
 ];
