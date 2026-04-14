@@ -14,7 +14,7 @@ dist-ssr/
 
 #Editor & OS
 .vscode/*
-!.vscode/settings.json
+.vscode/settings.json
 .DS_Store
 Thumbs.db
 .ideia
